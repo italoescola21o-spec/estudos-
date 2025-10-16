@@ -1,0 +1,16 @@
+# render.yaml — deploy automático do backend Node (Express)
+services:
+  - type: web
+    name: estudo-inteligente-backend
+    env: node
+    plan: free
+    region: oregon
+    repo: italoescola21o-spec/estudos
+    branch: main
+    autodeploy: true
+    buildCommand: npm install
+    startCommand: npm start
+    # Não coloque sua chave aqui — defina OPENAI_API_KEY pelo painel do Render (Environment)
+    envVars:
+      - key: OPENAI_API_KEY
+        value: ""
